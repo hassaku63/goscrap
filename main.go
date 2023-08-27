@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 func main() {
 	// before wire
 	// message := NewMessage()
@@ -9,6 +14,10 @@ func main() {
 	// event.Start()
 
 	// after wire
-	e := InitializeEvent()
-	e.Start()
+	greeter, err := InitializeEvent()
+	if err != nil {
+		fmt.Printf("failed to create event: %s\n", err)
+		os.Exit(2)
+	}
+	greeter.Start()
 }
