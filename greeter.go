@@ -17,8 +17,8 @@ type Event struct {
 	Greeter Greeter // <- adding a Greeter field
 }
 
-func NewMessage() Message {
-	return Message("Hi there!")
+func NewMessage(phrase string) Message {
+	return Message(phrase)
 }
 
 func NewGreeter(m Message) Greeter {

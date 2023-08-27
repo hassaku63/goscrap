@@ -14,7 +14,7 @@ func main() {
 	// event.Start()
 
 	// after wire
-	greeter, err := InitializeEvent()
+	greeter, err := InitializeEvent("Hi there!")
 	if err != nil {
 		fmt.Printf("failed to create event: %s\n", err)
 		os.Exit(2)
