@@ -6,11 +6,16 @@ clean:
 	@go clean
 	@rm -rf main
 
+.PHONY: wire
+wire:
+	@echo "Generating wire files..."
+	@wire ./...
+
 .PHONY: build
-build: $(GO_FILES)
+build: $(GO_FILES) wire
 	@echo "Building..."
 	@go mod tidy
-	@go build -o main main.go
+	@go build -o main
 
 .PHONY: run
 run: 
