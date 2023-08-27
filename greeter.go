@@ -43,6 +43,10 @@ func NewEvent(g Greeter) (Event, error) {
 	return Event{Greeter: g}, nil
 }
 
+func NewEventNumber() int {
+	return 1
+}
+
 func (e Event) Start() {
 	msg := e.Greeter.Greet()
 	fmt.Println(msg)
